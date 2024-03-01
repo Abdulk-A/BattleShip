@@ -30,7 +30,7 @@ int main() {
         cout << "enter Y coordinate: ";
         cin >> y;
         
-        while(x < 0 || y < 0 || x >= BOARD_HEIGHT || y >= BOARD_WIDTH) {
+        while(x <= 0 || y <= 0 || x > BOARD_HEIGHT || y > BOARD_WIDTH) {
 
             cout << "make sure your coordinates are both between 1-" << BOARD_WIDTH << "!\n";
             cout << "enter X coordinate: ";
@@ -39,10 +39,10 @@ int main() {
             cin >> y; 
         }
         
-        if(board[x][y] == '#' || board[x][y] == 'X') cout << RED << "MISS!\n" << RESET; 
+        if(board[x-1][y-1] == '#' || board[x-1][y-1] == 'X') cout << RED << "MISS!\n" << RESET; 
         else {
             cout << GREEN << "HIT!\n" << RESET;
-            board[x][y] = 'X';
+            board[x-1][y-1] = 'X';
         }
         
         cout << "Show enemy board and forfit (Y/N): ";
@@ -65,7 +65,7 @@ int main() {
 }
 
 void printBoard(vector<string>&board){
-    for(int i = 0; i < board.size(); i++){
-        cout << board[i] << endl;
+    for(const auto& i : board){
+        cout << i << endl;//
     }
 }
