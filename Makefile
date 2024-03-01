@@ -1,12 +1,12 @@
 
-output: main.o boardGenerator.o
-	g++ main.o boardGenerator.o -o output
+output: CompileFiles/main.o CompileFiles/boardGenerator.o
+	g++ CompileFiles/main.o CompileFiles/boardGenerator.o -o output
 
-main.o: main.cpp
-	g++ -c main.cpp
+CompileFiles/main.o: main.cpp
+	g++ -c main.cpp -o CompileFiles/main.o
 
-boardGenerator.o: boardGenerator.cpp
-	g++ -c boardGenerator.cpp
+CompileFiles/boardGenerator.o: Generators/boardGenerator.cpp
+	g++ -c Generators/boardGenerator.cpp -o CompileFiles/boardGenerator.o
 
 clean:
-	rm *.o output
+	rm -f CompileFiles/*.o output

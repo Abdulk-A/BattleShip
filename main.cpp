@@ -1,13 +1,6 @@
 #include <iostream>
 #include <stdlib.h>  
-#include "boardGenerator.h"
-
-//g++ main.cpp -o demo
-//g++ -c main.cpp
-//g++ -c boardGenerator.cpp
-
-//g++ -o demo boardGenerator.o main.o
-
+#include "Generators/boardGenerator.h"
 
 #define RESET   "\033[0m"
 #define RED     "\033[31m"
@@ -15,11 +8,7 @@
 
 using namespace std;
 
-vector<string>board; 
 void printBoard(vector<string>&board);
-
-const int WIDTH = 25;
-const int HEIGHT = 25;
 
 int main() {
 
@@ -43,7 +32,7 @@ int main() {
         
         while(x < 0 || y < 0 || x >= BOARD_HEIGHT || y >= BOARD_WIDTH) {
 
-            cout << "make sure your coordinates are both between 0-24!\n";
+            cout << "make sure your coordinates are both between 1-" << BOARD_WIDTH << "!\n";
             cout << "enter X coordinate: ";
             cin >> x;
             cout << "enter Y coordinate: ";
