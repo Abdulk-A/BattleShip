@@ -4,10 +4,10 @@
 
 #include <vector>
 
-const int BOARD_WIDTH = 25;
-const int BOARD_HEIGHT = 25;
-const int SHIP_LENGTH = 5;
-const int NUM_SHIPS = 5;
+const int BOARD_WIDTH = 10;
+const int BOARD_HEIGHT = 10;
+const int SHIP_LENGTH = 4;
+const int NUM_SHIPS = 4;
 
 bool checkForConflicts(std::vector<std::vector<int> >&ships, std::vector<int>&ship);
 // bool checkForConflictsHelper(std::vector<int>&ship, int start, int stop);

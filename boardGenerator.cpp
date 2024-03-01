@@ -8,7 +8,7 @@ using namespace std;
 
 //number between 0-24
 int getXY(){
-    return rand() % 25;
+    return rand() % BOARD_WIDTH;
 }
 
 int flip(){
@@ -16,8 +16,8 @@ int flip(){
 }
 
 int getDirection(int point){
-    if(point >= 4 && point <= 20) return flip(); //return 0 or 1
-    else if(point < 4) return 1;
+    if(point >= SHIP_LENGTH-1 && point <= BOARD_WIDTH-SHIP_LENGTH) return flip(); //return 0 or 1
+    else if(point < SHIP_LENGTH-1) return 1;
 
     return 0; 
 }
@@ -196,5 +196,7 @@ bool checkForConflicts(vector<vector<int> >&ships, vector<int>&ship){
 }
 
 vector<string> getBoard(){
+    srand(time(NULL));
     return generateBoardWithShips();
 }
+
